@@ -101,4 +101,4 @@ async def ball(ctx, question):
 @bot.event
 async def on_message(message):
 	await bot.process_commands(message)
-bot.run("NDM4MDM1ODc2MTAzMzIzNjY2.DcCveQ.0vpwzUotY2q2FXrvNo0flDFYvzU")
+bot.run("NDM4MDM1ODc2MTAzMzIzNjY2.DcC0VQ.uTHGo5qwIXgs6-Ng4vMELDZshuk")
