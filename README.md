@@ -1,2 +1,2 @@
 # Hypebot
-## Made by EpicShardGaming and MMGamer
+## Made by EpicShardGaming, Nexianz and MMGamer
