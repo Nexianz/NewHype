@@ -61,7 +61,7 @@ async def warn(ctx, userName: discord.Member, reason: str):
         embed.set_thumbnail(url=userName.avatar_url)
         embed.set_author(name=ctx.message.author.name, icon_url=ctx.message.author.avatar_url)
         await bot.say(embed=embed)
-	await bot.send_message(userName, embed=embed)
+        await bot.send_message(userName, embed=embed)
     else:
         await bot.say("{} :x: You are not allowed to use this command!".format(ctx.message.author.mention))
 @bot.command(pass_context=True)
