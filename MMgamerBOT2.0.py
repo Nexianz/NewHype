@@ -98,7 +98,10 @@ async def embed(ctx):
 @bot.command(pass_context=True)
 async def ball(ctx, question):
 	await bot.say(random.choice(["NO", "Ofc", "What do u think", "Hmmm", "Yeh"]))
-
+@bot.event
+async def on_member_join(member: discord.Member):
+    role = discord.utils.get(message.server.roles, name="Members")
+    await client.add_roles(message.author, role)
 @bot.event
 async def on_message(message):
 	await bot.process_commands(message)
