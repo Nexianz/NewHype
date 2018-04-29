@@ -19,9 +19,9 @@ async def on_ready():
     await bot.change_presence(game=discord.Game(name="mmgamerbot.com", url="https://twitch.tv/EpicShardGaming", type=1))
     
 @bot.event
-async def on_command_error(ctx, message, error):
+async def on_command_error(message, error):
     embed=discord.Embed(title="Command Not Found", description="Whoops! I can't find that try `!help`", color=0x66009D)
-    await bot.send_message(ctx.message.channel, embed=embed)
+    await bot.send_message(message.channel, embed=embed)
 
 @bot.command(pass_context=True)
 async def help(ctx):
@@ -168,6 +168,12 @@ async def remove_all_servers(ctx):
         for server in tmp:
             await bot.leave_server(server)
         await bot.say("Operation finised")
+@bot.command(pass_context=True)
+async def say(ctx, *, message):
+    if ctx.message.author.id == bot.user.id:
+        return
+    else:
+        await bot.say(message)
 
 
 @bot.event
