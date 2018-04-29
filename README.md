@@ -1,2 +1,1 @@
-# Hypebot
-## Made by EpicShardGaming and MMGamer
+# MMgamerBOT-2.0
