@@ -10,6 +10,12 @@ import requests
 
 bot = commands.Bot(command_prefix='!')
 bot.remove_command('help')
+async def loop():
+    await bot.change_presence(game=discord.Game(name="!help", url="https://twitch.tv/EpicShardGaming", type=1))
+    asyncio.sleep(10)
+    await bot.change_presence(game=discord.Game(name="mmgamerbot.com", url="https://twitch.tv/EpicShardGaming", type=1))
+    asyncio.sleep(10)
+    await bot.change_presence(game=discord.Game(name="prefix: !", url="https://twitch.tv/EpicShardGaming", type=1))
 
 @bot.event
 async def on_ready():
@@ -17,6 +23,7 @@ async def on_ready():
     print ("I am running on " + bot.user.name)
     print ("With the ID: " + bot.user.id)
     await bot.change_presence(game=discord.Game(name="mmgamerbot.com", url="https://twitch.tv/EpicShardGaming", type=1))
+    bot.loop.create_task(list_servers())
     
 @bot.event
 async def on_command_error(message, error):
